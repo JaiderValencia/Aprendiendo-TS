@@ -7,4 +7,4 @@ console.log(mensaje);
 
 mensaje = "chao mundo"
 
-//tipo de datos
+//tipo
