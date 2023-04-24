@@ -44,9 +44,62 @@ miVariable = 'chanchito feliz'
 
 miVariable = 42
 
+
+// Arrays
 let animales: string[] = ['perro', 'koala', 'oso'] // array de strings
 let numeros: number[] = [1, 2, 3, 4, 5] // array de numeros
 let checks: boolean[] = [true, false, true, true] // array de booleanos
 let numeros2: Array<number> = [] // otra forma de hacer arrays
 
 // animales.map(x=>x.) el autocompletado sugiere métodos del tipo de dato correspondiente
+
+
+// Tuplas
+let tupla: [number, string] = [1, 'hola mundo'] // un array con longitud y tipo de datos definida
+
+
+// tipos personalizados
+
+type Direccion = {
+    nomenclatura: string,
+    numero: number,
+    adicional: string
+}
+
+type Persona = {
+    id: number,
+    nombre: string,
+    edad?: number, // aunque sea necesario en como los otros con colocarle '?' se hace opcional agregarlo al objeto
+    readonly identificacion: number, // con el 'readonly' ya no se podrá modificar la propiedad del objeto
+    direccion: Direccion
+}
+
+// Objetos
+const objeto: Persona = {
+    id: 2,
+    nombre: 'chanchito',
+    identificacion: 1078455732,
+    direccion: {
+        nomenclatura: 'calle',
+        numero: 18,
+        adicional: 'por los pollos'
+    }
+}
+
+// objeto.identificacion = 21 //no podré hacer esto porque la propiedad está con 'readonly'
+
+
+
+// array de objetos definidos, el array solo podrá tener objetos del tipo ya definido antes
+const personasArray: Persona[] = [
+    {
+        id: 18,
+        nombre: 'cuco',
+        identificacion: 213421312,
+        direccion: {
+            nomenclatura: 'calle',
+            numero: 18,
+            adicional: 'por los pepes'
+        }
+    }
+]
